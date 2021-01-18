@@ -7,7 +7,9 @@ class Engineer {
         this.github = github;
     }
 
-    getGithub() {}
+    getGithub() {
+        return this.github
+    }
 
     getRole () {
         return "Engineer";

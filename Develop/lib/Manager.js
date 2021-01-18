@@ -7,7 +7,9 @@ class Manager {
         this.officeNumber = this.officeNumber;
     }
 
-    getofficeNumber() {}
+    getofficeNumber() {
+        return this.officeNumber
+    }
 
     getRole () {
         return "Manager";

@@ -7,7 +7,9 @@ class Intern {
         this.school = school;
     }
 
-    getSchool() {}
+    getSchool() {
+        return this.school
+    }
 
     getRole () {
         return "Intern";
