@@ -15,9 +15,10 @@ const employees = [];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
     
-    function createManager () {
+
+    const createManager = async() => {
         //ask manager if they want employees lost of if else
-        inquirer.prompt([{
+        await inquirer.prompt([{
             type: "input",
             name: "name",
             message: "What is the manager's name?"
@@ -46,8 +47,8 @@ const employees = [];
 
     };
 
-    function createIntern () {
-        inquirer.prompt([{
+    const createIntern = async() => {
+        await inquirer.prompt([{
             type: "input",
             name: "name",
             message: "What is the intern's name?"
@@ -76,8 +77,8 @@ const employees = [];
         addMember();
     };
 
-    function createEngineer () {
-        inquirer.prompt([
+    const createEngineer = async() => {
+        await inquirer.prompt([
             {
                 type:"input",
                 name:"name",
@@ -108,22 +109,6 @@ const employees = [];
 
     };
 
-    const addMember = () => {
-        inquirer.prompt([{
-            type: "confirm",
-            name: "addEmployee",
-            message: "Would you like to add an employee?"
-        }]).then(response => {
-            if (response.addEmployee) {
-                employeeRole();
-            } else {
-                console.log("Great, thanks!");
-                buildTeam();
-            };
-        });
-    };
-    
-    
     const employeeRole = () => {
         inquirer.prompt([{
             type: "list",
@@ -146,6 +131,24 @@ const employees = [];
             };
         });
     };
+
+    const addMember = () => {
+        inquirer.prompt([{
+            type: "confirm",
+            name: "addEmployee",
+            message: "Would you like to add an employee?"
+        }]).then(response => {
+            if (response.addEmployee) {
+                employeeRole();
+            } else {
+                console.log("Great, thanks!");
+                buildTeam();
+            };
+        });
+    };
+    
+    
+
 
     function buildTeam () {
         //fs.writefile output path & output directory 
