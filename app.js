@@ -114,8 +114,8 @@ const employees = [];
             name: "addEmployee",
             message: "Would you like to add an employee?"
         }]).then(response => {
-            if (response.addMore) {
-                whatRole();
+            if (response.addEmployee) {
+                employeeRole();
             } else {
                 console.log("Great, thanks!");
                 buildTeam();
